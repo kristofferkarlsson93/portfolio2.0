@@ -1,7 +1,11 @@
+body {
+  overflow-x: scroll;
+}
+
 .App {
   text-align: center;
-  width: 300%;
-  overflow-x: scroll;
+  width: 300%;  
+  overflow-x: scroll;  
 }
 
 .App-logo {
