@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import car from '../img/car.jpg';
+import car from '../img/car.png';
 import classNames from 'classnames';
 import MaterialIcon from 'react-google-material-icons'
 //import { CSSTransitionGroup } from 'react-transition-group' // ES6
@@ -33,6 +33,7 @@ export default class Car extends Component {
       }
     });
     document.body.addEventListener('keyup', e => this.stop());
+    document.body.addEventListener('mouseup', e => this.stop());
     this.preventDefaultScrolling();
   }
 
@@ -78,8 +79,8 @@ export default class Car extends Component {
     return (
       <div style={styles.container}>
         <div>
-          <span onMouseDown={ () => {this.drive(true); this.setState({currentDirection: 'left'})} } onMouseUp={ () => this.stop() } style={styles.arrows}><MaterialIcon icon="keyboard_arrow_left" size={42} /></span>
-          <span onMouseDown={ () => {this.drive(true); this.setState({currentDirection: 'right'}) }} onMouseUp={ () => this.stop()} style={styles.arrows}><MaterialIcon icon="keyboard_arrow_right" size={42}/></span>
+          <span onMouseDown={ () => {this.drive(true); this.setState({currentDirection: 'left'})}} style={styles.arrows}><MaterialIcon icon="keyboard_arrow_left" size={42} /></span>
+          <span onMouseDown={ () => {this.drive(true); this.setState({currentDirection: 'right'})}} style={styles.arrows}><MaterialIcon icon="keyboard_arrow_right" size={42}/></span>
         </div>
         <img src={car} className={this.getClassNames()} alt='car' style={styles.carImg}/>
       </div>
@@ -111,6 +112,7 @@ const styles = {
     display: 'grid',
     gridColumnGap: '100px',
     gridRowGap: '10px',
+    backgroundColor: 'transparent'
   },
   arrows: {
     backgroundColor: 'transparent'

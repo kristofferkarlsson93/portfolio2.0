@@ -3,10 +3,6 @@ import sun from '../img/sun.jpg'
 
 export default class Sun extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.initEvents();
   }
