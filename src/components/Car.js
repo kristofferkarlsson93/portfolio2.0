@@ -60,12 +60,10 @@ export default class Car extends Component {
   }
 
   async stop() {
-    console.log('Här ska jag inte vara');    
     await this.juggle(false);
   }
   
   async juggle(shouldJuggle) {
-    console.log('shouldJuggle', shouldJuggle);
     await this.setState({
         shouldJuggle: shouldJuggle
     });
